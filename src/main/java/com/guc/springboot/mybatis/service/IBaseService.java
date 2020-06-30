@@ -1,6 +1,7 @@
 package com.guc.springboot.mybatis.service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
   *将 service 常用的公共方法抽象出来，如简单的增删查改等功能，这样可以减少很多的重复代码。
@@ -30,4 +31,6 @@ public interface IBaseService<T> {
      * 返回所有信息
      */
     List<T> list();
+
+    List<T> listByWhere(Map map);
 }

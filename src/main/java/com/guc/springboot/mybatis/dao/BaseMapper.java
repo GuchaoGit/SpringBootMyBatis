@@ -1,6 +1,7 @@
 package com.guc.springboot.mybatis.dao;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用于提取常用的公共方法，减少重复代码。
@@ -31,4 +32,6 @@ public interface BaseMapper<T> {
      * 返回所有信息
      */
     List<T> list();
+
+    List<T> listByWhere(Map map);
 }

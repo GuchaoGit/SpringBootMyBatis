@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author guc
@@ -57,6 +58,11 @@ public class UserController {
     @GetMapping()
     public List<User> list(){
         return userService.list();
+    }
+
+    @RequestMapping("query")
+    public List<User> listByWhere(@RequestParam Map map){
+        return userService.listByWhere(map);
     }
 
     // 使用 get 方法查询单个数据

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author guc
@@ -41,5 +42,10 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     @Override
     public List<T> list(){
         return baseMapper.list();
+    }
+
+    @Override
+    public List<T> listByWhere(Map map) {
+        return baseMapper.listByWhere(map);
     }
 }
